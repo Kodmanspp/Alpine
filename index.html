@@ -14,9 +14,12 @@
   <body>
     <div x-data="data">
       <template x-if="articles.length > 0">
-        <template x-for="index in viewCount">
-          <p x-text="articles[index].title"></p>
-        </template>
+          <div>
+            <template x-for="index in viewCount">
+                <p x-text="articles[index].title"></p>
+              </template>
+              <button x-on:click="viewCount += 10">View more</button>
+          </div>
       </template>
     </div>
     <script type="text/javascript" src="./index.js"></script>
