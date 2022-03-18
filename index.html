@@ -4,16 +4,21 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./style.css" rel="stylesheet" type="text/css">
+    <link href="./style.css" rel="stylesheet" type="text/css" />
     <script
-      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js"
       defer
+      src="https://unpkg.com/alpinejs@3.9.1/dist/cdn.min.js"
     ></script>
     <title>Alpine</title>
   </head>
   <body>
-    
-
-    <script src="./index.js"></script>
+    <div x-data="data">
+      <template x-if="articles.length > 0">
+        <template x-for="index in viewCount">
+          <p x-text="articles[index].title"></p>
+        </template>
+      </template>
+    </div>
+    <script type="text/javascript" src="./index.js"></script>
   </body>
 </html>
