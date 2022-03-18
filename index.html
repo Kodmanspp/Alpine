@@ -14,11 +14,14 @@
   <body>
     <div x-data="data">
       <template x-if="articles.length > 0">
-          <div>
+          <div class="Articles__page">
             <template x-for="index in viewCount">
-                <p x-text="articles[index].title"></p>
+                <div class="article">
+                    <h2 class="article__title" x-text="articles[index].title"></h2>
+                    <p class="articles__text" x-text="articles[index].body"></p>
+                </div>
               </template>
-              <button x-on:click="viewCount += 10">View more</button>
+              <button class="view-more__btn" x-on:click="viewCount += 10">View more</button>
           </div>
       </template>
     </div>
