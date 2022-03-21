@@ -12,18 +12,18 @@
     <title>Alpine</title>
   </head>
   <body>
-    <div x-data="data">
-      <template x-if="articles.length > 0">
-          <div class="Articles__page">
-            <template x-for="item in articles">
-                <div class="article">
-                    <h2 class="article__title" x-text="item.title"></h2>
-                    <p class="articles__text" x-text="item.body"></p>
-                </div>
-              </template>
-              <button class="view-more__btn" x-on:click="getNewArticles">View more</button>
-          </div>
-      </template>
+    <div x-data="Articles" x-init="$nextTick(() => { fethcArticles() })" class="articles">
+      <ul class="articles__list">
+        <template x-for="item in articles" :key="item.id">
+          <li class="articles__item">
+            <h2 class="articles__title" x-text="item.title"></h2>
+            <p class="articles__text" x-text="item.body"></p>
+          </li>
+        </template>
+      </ul>
+      <button class="articles__btn" x-on:click="fethcArticles">
+        View more
+      </button>
     </div>
     <script type="text/javascript" src="./index.js"></script>
   </body>
