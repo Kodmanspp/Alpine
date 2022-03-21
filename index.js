@@ -8,7 +8,7 @@ document.addEventListener("alpine:init", () => {
         `https://jsonplaceholder.typicode.com/posts?userId=${this.userId}`
       );
       const data = await res.json();
-      this.articles.push(...data);
+      this.articles.unshift(...data.reverse());
       this.userId++;
     },
   }));
