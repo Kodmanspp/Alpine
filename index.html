@@ -17,18 +17,19 @@
       x-init="$nextTick(() => { fethcArticles() })"
       class="articles"
     >
-      <button class="articles__btn" x-on:click="fethcArticles">
-        View more
-      </button>
       <ul class="articles__list">
         <template x-for="item in articles" :key="item.id">
           <li class="articles__item">
             <h2 class="articles__title" x-text="item.title"></h2>
             <p x-text="item.id"></p>
+
             <p class="articles__text" x-text="item.body"></p>
           </li>
         </template>
       </ul>
+      <button class="articles__btn" x-on:click="fethcArticles">
+        View more
+      </button>
     </div>
     <script type="text/javascript" src="./index.js"></script>
   </body>
